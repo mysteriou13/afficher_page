@@ -10,6 +10,38 @@ Version: 1.0
 Author URI: http://mon-siteweb.com/
 */
 
+
+
+
+function menu_page(){
+
+  add_action( "admin_menu", "montheme_ajouter_menu_tableau_de_bord" );
+
+  function montheme_ajouter_menu_tableau_de_bord() {
+
+     add_menu_page(
+
+        __( "Mon thème - Configuration", "montheme" ), // texte de la balise <title>
+
+        __( "menu page", "montheme" ),  // titre de l'option de menu
+
+        "manage_options", // droits requis pour voir l'option de menu
+
+        "menu-gestion", // slug
+
+        "montheme_creer_page_configuration" // fonction de rappel pour créer la page
+
+     );
+
+  }
+
+
+
+}
+
+
+menu_page();
+
 function afficher(){
 
   global $wpdb;
