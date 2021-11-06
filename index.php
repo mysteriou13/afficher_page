@@ -32,10 +32,24 @@ function menu_page(){
         "montheme_creer_page_configuration" // fonction de rappel pour créer la page
 
      );
+}
 
-  }
+$p = get_theme_root();
 
 
+$resStr = str_replace('themes', 'plugins', $p);
+
+  if(isset($_GET['page']) && !empty($_GET['page'])){
+
+   $file = htmlspecialchars($_GET['page']);
+
+  $page = $resStr."/affiche/template/".$file.".php";
+
+  include($page);
+
+  include($file);
+
+}
 
 }
 
