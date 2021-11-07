@@ -20,14 +20,13 @@ function create_table_menu(){
 
    $table_name = "wp_menu";
 
-  $sql = "CREATE TABLE $table_name (
-    id mediumint(9) NOT NULL AUTO_INCREMENT,
-    time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
-    name tinytext NOT NULL,
-    text text NOT NULL,
-    url varchar(55) DEFAULT '' NOT NULL,
-    PRIMARY KEY  (id)
-  ) $charset_collate;";
+  $sql = "CREATE TABLE `menu_page` (
+  `id` int NOT NULL,
+  `name_menu` text NOT NULL,
+  `el_menu` text NOT NULL,
+  `link_menu` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+";
 
   require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
   dbDelta( $sql );
