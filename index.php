@@ -49,7 +49,7 @@ function menu_page(){
 
         __( "Mon thème - Configuration", "montheme" ), // texte de la balise <title>
 
-        __( "menu page", "montheme" ),  // titre de l'option de menu
+        __( "menu en tete", "montheme" ),  // titre de l'option de menu
 
         "manage_options", // droits requis pour voir l'option de menu
 
@@ -69,7 +69,7 @@ $resStr = str_replace('themes', 'plugins', $p);
 
    $file = htmlspecialchars($_GET['page']);
 
-  $page = $resStr."/affiche/template/".$file.".php";
+  $page = $resStr."/afficher_page/template/".$file.".php";
 
   include($page);
 
