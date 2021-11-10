@@ -10,32 +10,16 @@ Version: 1.0
 Author URI: http://mon-siteweb.com/
 */
 
+$p = get_theme_root();
 
-function create_table_menu(){
+$resStr = str_replace('themes', 'plugins', $p);
 
+ $sql = $resStr."/afficher_page/class/sql/class_sql.php";
 
-  global $wpdb;
+include($sql);
 
-  $charset_collate = $wpdb->get_charset_collate();
+$class_sql = new sql();
 
-   $table_name = "wp_menu";
-
-  $sql = "CREATE TABLE `menu_page` (
-  `id` int NOT NULL,
-  `name_menu` text NOT NULL,
-  `el_menu` text NOT NULL,
-  `link_menu` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-";
-
-  require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-  dbDelta( $sql );
-
-
-
-}
-
-create_table_menu();
 
 
 function menu_page(){
@@ -121,5 +105,7 @@ foreach($results as $row)
 }
 
 }
+
+
 
 ?>
