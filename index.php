@@ -10,6 +10,7 @@ Version: 1.0
 Author URI: http://mon-siteweb.com/
 */
 
+
 $p = get_theme_root();
 
 $resStr = str_replace('themes', 'plugins', $p);
@@ -19,6 +20,17 @@ $resStr = str_replace('themes', 'plugins', $p);
 include($sql);
 
 $class_sql = new sql();
+
+
+if(isset($_POST['titre_menu'])){
+
+
+  $class_sql->create_menu($_POST['titre_menu'],$_POST['el_menu'],"test_menu");
+
+
+}
+
+
 
 
 

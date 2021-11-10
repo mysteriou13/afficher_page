@@ -9,10 +9,11 @@
  <h2> creation menu</h2>
 
 
-<form action = "<?php $_SERVER['PHP_SELF']?>" method = "post">
+<form action = "<?php $_SERVER['PHP_SELF']?>" method = "POST">
 
 nom de menu <input type = "text"  name = "titre_menu">
 
+el_menu <input type = "text" name = "el_menu">
 
 <input type = "submit">
 
