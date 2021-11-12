@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,WAAW;EAET,OAAO,EAAE,IAAI;EACf,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM",
+"sources": ["sass/class/box-center.scss"],
+"names": [],
+"file": "style.css"
+}

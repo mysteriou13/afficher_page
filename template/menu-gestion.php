@@ -1,5 +1,10 @@
 
 
+<?php
+
+?>
+
+
 <div style = "position:relative; left:20%">
     <h1>menu en tete</h1>
 

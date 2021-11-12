@@ -1,4 +1,25 @@
 
+
+<?php
+
+$p = get_theme_root();
+
+
+$resStr = str_replace('themes', 'plugins', $p);
+
+ $link = $resStr."/afficher_page";
+
+?>
+
+<style>
+<?php
+
+include($link."/style.css");
+
+?>
+
+</style>
+
 <?php
 
 /*
@@ -13,13 +34,17 @@ Author URI: http://mon-siteweb.com/
 
 $p = get_theme_root();
 
+
 $resStr = str_replace('themes', 'plugins', $p);
 
  $sql = $resStr."/afficher_page/class/sql/class_sql.php";
 
+
+
 include($sql);
 
 $class_sql = new sql();
+
 
 
 if(isset($_POST['titre_menu'])){
@@ -33,8 +58,13 @@ if(isset($_POST['titre_menu'])){
 
 
 
-
 function menu_page(){
+
+  $sql = $resStr."/afficher_page/class/sql/class_sql.php";
+
+ include($sql);
+
+ $class_sql = new sql();
 
   add_action( "admin_menu", "montheme_ajouter_menu_tableau_de_bord" );
 
@@ -70,7 +100,15 @@ $resStr = str_replace('themes', 'plugins', $p);
 
   include($file);
 
+
+  include($resStr."/afficher_page/template/el_menu.php");
+
+
 }
+
+
+
+
 
 }
 

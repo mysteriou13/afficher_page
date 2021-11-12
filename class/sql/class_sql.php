@@ -55,9 +55,47 @@ $wpdb->insert('menu_page', array(
 }
 
 
+}
 
+function liste_page($prefix){
+
+global $wpdb;
+
+
+$post = $prefix."posts";
+
+$liste_page = $wpdb->get_results("SELECT * FROM $post WHERE post_type = 'page' && post_status = 'publish'");
+
+foreach ($liste_page as $row) {
+
+ $row->guid;
 
 }
+
+}
+
+function liste_menu(){
+
+global $wpdb;
+
+
+  $liste_menu = $wpdb->get_results("SELECT * FROM `menu_page` ");
+
+    echo "<div class = 'box-center'>";
+
+  foreach ($liste_menu as $row) {
+
+  $page = "./admin.php?page=menu-gestion&menu=".$row->name_menu;
+
+ echo "<div><a href ='".$page."'>".$row->name_menu."</a></div>";
+
+  }
+
+  echo "</div>";
+
+
+  }
+
 
 
 }
