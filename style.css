@@ -1,6 +1,13 @@
 .box-center {
   display: flex;
-  align-items: center;
-  justify-content: center; }
+  position: relative;
+  left: 20%; }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNhc3MvY2xhc3MvYm94LWNlbnRlci5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUUsYUFBYTtFQUNmLG1CQUFtQjtFQUNuQix1QkFBdUIsRUFBQSIsImZpbGUiOiJzdHlsZS5jc3MifQ== */
+.box-link {
+  width: 24%; }
+
+.position-link {
+  position: relative;
+  left: 20%; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNhc3MvY2xhc3MvYm94LWNlbnRlci5zY3NzIiwic2Fzcy9jbGFzcy9ib3gtbGluay5zY3NzIiwic2Fzcy9jbGFzcy9wb3NpdGlvbi1saW5rLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFRSxhQUFhO0VBQ2Isa0JBQWtCO0VBQ2xCLFNBQVMsRUFBQTs7QUNKWDtFQUVBLFVBQVMsRUFBQTs7QUNGVDtFQUVBLGtCQUFrQjtFQUNsQixTQUFTLEVBQUEiLCJmaWxlIjoic3R5bGUuY3NzIn0= */

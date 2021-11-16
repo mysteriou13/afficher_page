@@ -57,20 +57,42 @@ $wpdb->insert('menu_page', array(
 
 }
 
-function liste_page($prefix){
+function add_el_menu($name_menu,$el_menu,$link_menu){
+
+    global $wpdb;
+
+   $wpdb->insert('menu_page', array(
+       "name_menu" => $name_menu,
+      "el_menu" => $el_menu,
+      "link_menu" =>  $link_menu,
+
+  ));
+
+
+}
+
+function liste_page($champs){
 
 global $wpdb;
 
 
-$post = $prefix."posts";
 
-$liste_page = $wpdb->get_results("SELECT * FROM $post WHERE post_type = 'page' && post_status = 'publish'");
+ $post = "wp_posts";
+
+ $liste_page = $wpdb->get_results("SELECT * FROM  `wp_posts` WHERE post_type = 'page' && post_status = 'publish'");
+
+$tab = [];
 
 foreach ($liste_page as $row) {
 
- $row->guid;
+$a = $row->post_title;
+
+array_push($tab, $a);
+
 
 }
+
+return $tab;
 
 }
 
@@ -87,11 +109,17 @@ global $wpdb;
 
   $page = "./admin.php?page=menu-gestion&menu=".$row->name_menu;
 
- echo "<div><a href ='".$page."'>".$row->name_menu."</a></div>";
+ echo "<div class = 'box-link' ><a href ='".$page."'>".$row->name_menu."</a></div>";
 
   }
 
   echo "</div>";
+
+
+  }
+
+  function add_element(){
+
 
 
   }

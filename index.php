@@ -74,13 +74,14 @@ function menu_page(){
 
         __( "Mon thème - Configuration", "montheme" ), // texte de la balise <title>
 
-        __( "menu en tete", "montheme" ),  // titre de l'option de menu
+        __( "menu en tete"),  // titre de l'option de menu
 
         "manage_options", // droits requis pour voir l'option de menu
 
         "menu-gestion", // slug
 
-        "montheme_creer_page_configuration" // fonction de rappel pour créer la page
+        "montheme_creer_page_configuration"
+     // fonction de rappel pour créer la page
 
      );
 }
@@ -106,8 +107,19 @@ $resStr = str_replace('themes', 'plugins', $p);
 
 }
 
+ if(isset($_GET['menu']) && !empty($_GET['menu'])){
 
+   $p = get_theme_root();
 
+   $menu = htmlspecialchars($_GET['menu']);
+
+   $resStr = str_replace('themes', 'plugins', $p);
+
+  $addmenu = $resStr."/afficher_page/template/add-el-menu.php";
+
+  include($addmenu);
+
+ }
 
 
 }
