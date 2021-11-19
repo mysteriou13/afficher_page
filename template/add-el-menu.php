@@ -24,12 +24,29 @@ liste des page
 
   $tab = $class_sql->liste_page('post_title');
 
-  $nbtab = count($tab)-1;
-  $nb = -1;
-   while($nb <= $nbtab-1){
+ $tab_liste = $class_sql->liste_page_link_page();
 
+  $nbtab = count($tab)-1;
+
+    $nb_link = count($tab_liste)-1;
+
+
+  $nb = -1;
+
+  $linknb = -1;
+
+
+
+
+
+  while($nb <= $nbtab-1){
+
+
+$t = $tab_liste[$nb_link];
   $nb++;
-  echo "<OPTION>".$tab[$nb];
+  echo "<OPTION value ='";echo $t; echo"'>".$tab[$nb];
+
+
 
   }
 
@@ -40,10 +57,12 @@ liste des page
 
 <?php
 
+
+
   if(isset($_POST['name_menu'])  && !empty($_POST['name_menu'])){
 
 
-  $class_sql->add_el_menu($_POST['name_menu'],$_POST['name_el'],$_POST['link_menu']);
+  $class_sql->add_el_menu($_POST['name_menu'],$_POST['link_menu']);
 
   }
 

@@ -21,8 +21,7 @@ function create_table_menu(){
   $sql = "CREATE TABLE `menu_page` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name_menu` text NOT NULL,
-  `el_menu` text NOT NULL,
-  `link_menu` text NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ";
 
@@ -52,18 +51,25 @@ $wpdb->insert('menu_page', array(
 
 ));
 
-}
+$wpdb->insert('liste_menu', array(
+     "name_menu" => $name_menu,
+    "status" => "false",
+
+
+));
 
 
 }
 
-function add_el_menu($name_menu,$el_menu,$link_menu){
+
+}
+
+function add_el_menu($name_menu,$link_menu){
 
     global $wpdb;
 
    $wpdb->insert('menu_page', array(
        "name_menu" => $name_menu,
-      "el_menu" => $el_menu,
       "link_menu" =>  $link_menu,
 
   ));
@@ -96,12 +102,42 @@ return $tab;
 
 }
 
+
+
+function liste_page_link_page(){
+
+global $wpdb;
+
+
+
+ $post = "wp_posts";
+
+ $liste_page = $wpdb->get_results("SELECT * FROM  `wp_posts` WHERE post_type = 'page' && post_status = 'publish'");
+
+$tab = [];
+
+foreach ($liste_page as $row) {
+
+$a = $row->guid;
+
+array_push($tab, $a);
+
+
+}
+
+return $tab;
+
+}
+
+
+
+
 function liste_menu(){
 
 global $wpdb;
 
 
-  $liste_menu = $wpdb->get_results("SELECT * FROM `menu_page` ");
+  $liste_menu = $wpdb->get_results("SELECT * FROM `liste_menu` ");
 
     echo "<div class = 'box-center'>";
 
@@ -118,7 +154,7 @@ global $wpdb;
 
   }
 
-  function add_element(){
+  function afficher_menu(){
 
 
 

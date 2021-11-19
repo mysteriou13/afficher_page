@@ -102,6 +102,7 @@ $resStr = str_replace('themes', 'plugins', $p);
   include($file);
 
 
+
   include($resStr."/afficher_page/template/el_menu.php");
 
 

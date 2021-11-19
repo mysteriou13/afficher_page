@@ -18,7 +18,6 @@
 
 nom de menu <input type = "text"  name = "titre_menu">
 
-el_menu <input type = "text" name = "el_menu">
 
 <input type = "submit">
 
