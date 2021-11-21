@@ -154,8 +154,62 @@ global $wpdb;
 
   }
 
-  function afficher_menu(){
+  function active_menu($menu){
 
+
+
+    global $wpdb;
+
+    $sel = $wpdb->get_results("SELECT id FROM liste_menu");
+
+   foreach ($sel as $key) {
+
+    $id = $key->id;
+
+  $name =  $wpdb->get_results("SELECT name_menu FROM liste_menu WHERE id = $id");
+
+   foreach ($name as $key_menu) {
+
+   if($key_menu->name_menu == $menu){
+
+     $wpdb->update(
+      "liste_menu",
+      // SET (valeur)
+      array(
+      'status' => 'true',
+      ),
+
+      // WHERE (valeur)
+      array(
+      'name_menu' => $key_menu->name_menu,
+      ),
+
+      );
+
+
+   }else{
+
+
+     $wpdb->update(
+      "liste_menu",
+      // SET (valeur)
+      array(
+      'status' => 'false',
+      ),
+      // WHERE (valeur)
+      array(
+      'name_menu' => $key_menu->name_menu,
+      ),
+
+      );
+
+
+
+   }
+
+   }
+
+  }
 
 
   }

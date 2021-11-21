@@ -9,6 +9,17 @@ $resStr = str_replace('themes', 'plugins', $p);
 
  $link = $resStr."/afficher_page";
 
+ $sql = $resStr."/afficher_page/class/sql/class_sql.php";
+
+
+
+include($sql);
+
+$class_sql = new sql();
+
+
+
+
 ?>
 
 <style>
@@ -31,19 +42,6 @@ Version: 1.0
 Author URI: http://mon-siteweb.com/
 */
 
-
-$p = get_theme_root();
-
-
-$resStr = str_replace('themes', 'plugins', $p);
-
- $sql = $resStr."/afficher_page/class/sql/class_sql.php";
-
-
-
-include($sql);
-
-$class_sql = new sql();
 
 
 

@@ -1,5 +1,10 @@
 <div  class = "position-link">
 
+<?php
+
+$class_sql->active_menu();
+
+?>
  ajouter  element au menu <?php echo $_GET['menu']?>
 
  <form  method = "post" action = "<?php $_SERVER['PHP_SELF']?>">
@@ -17,6 +22,7 @@ link vers le page
 <SELECT name="link_menu" size="1">
 
   <?php
+
 
 /*
 liste des page
